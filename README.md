@@ -1,3 +1,11 @@
+# Timer App
+
+I orginally built this app as a utility for the Code Experiment Meetup's [website](https://github.com/code-experiment/code-experiment-website). 
+
+### Alarm Sound Source
+chiptune - https://freesound.org/people/kasa90/sounds/167419/
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import moment from "moment";
 import { Howl } from "howler";
+import "98.css";
 
 import chiptune from "./assets/sounds/chiptune-loop.wav";
+import "./App.scss";
 
 const Timer = () => {
     const alarm = new Howl({
@@ -71,59 +73,81 @@ const Timer = () => {
     const timer = moment.duration(timeLeft, "seconds")._data;
 
     return (
-        <div className="timer-wrapper">
-            <h1>Very Cool Timer</h1>
-            {!isStarted ? (
-                <div className="form-wrapper">
-                    <form onSubmit={handleSubmit(onSubmit)}>
-                        <input
-                            name="hours"
-                            defaultValue="00"
-                            ref={register}
-                        />
-                        <input
-                            name="minutes"
-                            defaultValue="00"
-                            ref={register}
-                        />
-                        <input
-                            name="seconds"
-                            defaultValue="00"
-                            ref={register}
-                        />
-                        <button type="submit">Start</button>
-                    </form>
-                    {errorMessage()}
+        <div className="timer-container">
+            <div className="timer-wrapper">
+                <div className="window">
+                    <div className="title-bar">
+                        <div className="title-bar-text">
+                            Very Cool Timer
+                        </div>
+                        <div className="title-bar-controls">
+                            <button aria-label="Help" />
+                            <button aria-label="Close" />
+                        </div>
+                    </div>
+                    {!isStarted ? (
+                        <div className="form-wrapper window-body">
+                            <p>Please enter a time.</p>
+                            <form onSubmit={handleSubmit(onSubmit)}>
+                                <div className="field-row">
+                                    <input
+                                        name="hours"
+                                        defaultValue="00"
+                                        ref={register}
+                                    />
+                                    <input
+                                        name="minutes"
+                                        defaultValue="00"
+                                        ref={register}
+                                    />
+                                    <input
+                                        name="seconds"
+                                        defaultValue="00"
+                                        ref={register}
+                                    />
+                                </div>
+                                <div className="field-row window-button-wrapper">
+                                    <button
+                                        className="start-button"
+                                        type="submit"
+                                    >
+                                        Start
+                                    </button>
+                                </div>
+                                {errorMessage()}
+                            </form>
+                        </div>
+                    ) : (
+                        <div>
+                            <p>
+                                {timer.hours < 10
+                                    ? `0${timer.hours}`
+                                    : timer.hours}
+                                :
+                                {timer.minutes < 10
+                                    ? `0${timer.minutes}`
+                                    : timer.minutes}
+                                :
+                                {timer.seconds < 10
+                                    ? `0${timer.seconds}`
+                                    : timer.seconds}
+                            </p>
+                            <button onClick={handleClick}>
+                                {timeLeft === 0
+                                    ? "Reset"
+                                    : isRunning
+                                    ? "Pause"
+                                    : "Resume"}
+                            </button>
+                            {isStarted && timeLeft > 0 ? (
+                                <button onClick={handleCancelClick}>
+                                    Cancel
+                                </button>
+                            ) : null}
+                        </div>
+                    )}
                 </div>
-            ) : (
-                <div>
-                    <h1>
-                        {timer.hours < 10
-                            ? `0${timer.hours}`
-                            : timer.hours}
-                        :
-                        {timer.minutes < 10
-                            ? `0${timer.minutes}`
-                            : timer.minutes}
-                        :
-                        {timer.seconds < 10
-                            ? `0${timer.seconds}`
-                            : timer.seconds}
-                    </h1>
-                    <button onClick={handleClick}>
-                        {timeLeft === 0
-                            ? "Reset"
-                            : isRunning
-                            ? "Pause"
-                            : "Resume"}
-                    </button>
-                    {isStarted && timeLeft > 0 ? (
-                        <button onClick={handleCancelClick}>
-                            Cancel
-                        </button>
-                    ) : null}
-                </div>
-            )}
+            </div>
         </div>
     );
 };

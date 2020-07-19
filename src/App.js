@@ -20,7 +20,6 @@ const Timer = () => {
     const [minutes, setMinutes] = useState(0);
     const [seconds, setSeconds] = useState(0);
     const [timeLeft, setTimeLeft] = useState(0);
-    const [error, setError] = useState(false);
 
     const { register, handleSubmit } = useForm();
 
@@ -29,14 +28,10 @@ const Timer = () => {
             parseInt(data.hours) * 3600 +
             parseInt(data.minutes) * 60 +
             parseInt(data.seconds);
-        if (timeInSec === 0) {
-            setError(true);
-        } else {
-            setError(false);
-            setTimeLeft(timeInSec);
-            setIsStarted(!isStarted);
-            setIsRunning(true);
-        }
+
+        setTimeLeft(timeInSec);
+        setIsStarted(!isStarted);
+        setIsRunning(true);
     };
 
     const handleClick = () => {
@@ -67,9 +62,7 @@ const Timer = () => {
 
     const startButton = () => {
         if (hours + minutes + seconds === 0) {
-            return (
-            <button disabled>Start</button>
-            );
+            return <button disabled>Start</button>;
         } else {
             return (
                 <button className="start-button" type="submit">

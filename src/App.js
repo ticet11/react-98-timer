@@ -73,7 +73,6 @@ const Timer = () => {
     };
 
     const incrementField = (type) => {
-        console.log(type);
         if (type === "hours") {
             setHours(parseInt(hours) + 1);
         } else if (type === "minutes") {

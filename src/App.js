@@ -39,16 +39,6 @@ const Timer = () => {
         }
     };
 
-    const errorMessage = () => {
-        if (error) {
-            return (
-                <p className="timer-error-message">
-                    Please enter a time
-                </p>
-            );
-        }
-    };
-
     const handleClick = () => {
         if (timeLeft === 0) {
             setIsStarted(!isStarted);
@@ -75,7 +65,22 @@ const Timer = () => {
         }
     });
 
+    const startButton = () => {
+        if (hours + minutes + seconds === 0) {
+            return (
+            <button disabled>Start</button>
+            );
+        } else {
+            return (
+                <button className="start-button" type="submit">
+                    Start
+                </button>
+            );
+        }
+    };
+
     const incrementField = (type) => {
+        console.log(type);
         if (type === "hours") {
             setHours(parseInt(hours) + 1);
         } else if (type === "minutes") {
@@ -148,7 +153,7 @@ const Timer = () => {
                                     <div className="minutes time-input">
                                         <input
                                             name="minutes"
-                                            defaultValue={minutes}
+                                            value={minutes}
                                             ref={register}
                                             onChange={(event) =>
                                                 setMinutes(
@@ -168,12 +173,17 @@ const Timer = () => {
                                         <img
                                             src={downButton}
                                             alt="down arrow"
+                                            onClick={() =>
+                                                decrementField(
+                                                    "minutes"
+                                                )
+                                            }
                                         />
                                     </div>
                                     <div className="seconds time-input">
                                         <input
                                             name="seconds"
-                                            defaultValue={seconds}
+                                            value={seconds}
                                             ref={register}
                                             onChange={(event) =>
                                                 setSeconds(
@@ -193,18 +203,17 @@ const Timer = () => {
                                         <img
                                             src={downButton}
                                             alt="down arrow"
+                                            onClick={() =>
+                                                decrementField(
+                                                    "seconds"
+                                                )
+                                            }
                                         />
                                     </div>
                                 </div>
                                 <div className="field-row window-button-wrapper">
-                                    <button
-                                        className="start-button"
-                                        type="submit"
-                                    >
-                                        Start
-                                    </button>
+                                    {startButton()}
                                 </div>
-                                {errorMessage()}
                             </form>
                         </div>
                     ) : (

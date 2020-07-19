@@ -61,14 +61,14 @@ const Timer = () => {
     });
 
     const startButton = () => {
-        if (hours + minutes + seconds === 0) {
-            return <button disabled>Start</button>;
-        } else {
+        if (hours + minutes + seconds > 0) {
             return (
                 <button className="start-button" type="submit">
                     Start
                 </button>
             );
+        } else {
+            return <button disabled>Start</button>;
         }
     };
 

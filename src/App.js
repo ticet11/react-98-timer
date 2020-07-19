@@ -16,6 +16,9 @@ const Timer = () => {
 
     const [isStarted, setIsStarted] = useState(false);
     const [isRunning, setIsRunning] = useState(false);
+    const [hours, setHours] = useState(0);
+    const [minutes, setMinutes] = useState(0);
+    const [seconds, setSeconds] = useState(0);
     const [timeLeft, setTimeLeft] = useState(0);
     const [error, setError] = useState(false);
 
@@ -72,6 +75,26 @@ const Timer = () => {
         }
     });
 
+    const incrementField = (type) => {
+        if (type === "hours") {
+            setHours(parseInt(hours) + 1);
+        } else if (type === "minutes") {
+            setMinutes(parseInt(minutes) + 1);
+        } else if (type === "seconds") {
+            setSeconds(parseInt(seconds) + 1);
+        }
+    };
+
+    const decrementField = (type) => {
+        if (type === "hours" && hours > 0) {
+            setHours(parseInt(hours) - 1);
+        } else if (type === "minutes" && minutes > 0) {
+            setMinutes(parseInt(minutes) - 1);
+        } else if (type === "seconds" && seconds > 0) {
+            setSeconds(parseInt(seconds) - 1);
+        }
+    };
+
     const timer = moment.duration(timeLeft, "seconds")._data;
 
     return (
@@ -95,27 +118,52 @@ const Timer = () => {
                                     <div className="hours time-input ">
                                         <input
                                             name="hours"
-                                            defaultValue="00"
+                                            value={hours}
                                             ref={register}
+                                            onChange={(event) =>
+                                                setHours(
+                                                    event.target.value
+                                                )
+                                            }
                                         />
                                         <img
                                             src={upButton}
                                             alt="up arrow"
+                                            onClick={() =>
+                                                incrementField(
+                                                    "hours"
+                                                )
+                                            }
                                         />
                                         <img
                                             src={downButton}
                                             alt="down arrow"
+                                            onClick={() =>
+                                                decrementField(
+                                                    "hours"
+                                                )
+                                            }
                                         />
                                     </div>
                                     <div className="minutes time-input">
                                         <input
                                             name="minutes"
-                                            defaultValue="00"
+                                            defaultValue={minutes}
                                             ref={register}
+                                            onChange={(event) =>
+                                                setMinutes(
+                                                    event.target.value
+                                                )
+                                            }
                                         />
                                         <img
                                             src={upButton}
                                             alt="up arrow"
+                                            onClick={() =>
+                                                incrementField(
+                                                    "minutes"
+                                                )
+                                            }
                                         />
                                         <img
                                             src={downButton}
@@ -125,12 +173,22 @@ const Timer = () => {
                                     <div className="seconds time-input">
                                         <input
                                             name="seconds"
-                                            defaultValue="00"
+                                            defaultValue={seconds}
                                             ref={register}
+                                            onChange={(event) =>
+                                                setSeconds(
+                                                    event.target.value
+                                                )
+                                            }
                                         />
                                         <img
                                             src={upButton}
                                             alt="up arrow"
+                                            onClick={() =>
+                                                incrementField(
+                                                    "seconds"
+                                                )
+                                            }
                                         />
                                         <img
                                             src={downButton}

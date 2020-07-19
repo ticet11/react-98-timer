@@ -209,32 +209,38 @@ const Timer = () => {
                             </form>
                         </div>
                     ) : (
-                        <div>
-                            <p>
-                                {timer.hours < 10
-                                    ? `0${timer.hours}`
-                                    : timer.hours}
-                                :
-                                {timer.minutes < 10
-                                    ? `0${timer.minutes}`
-                                    : timer.minutes}
-                                :
-                                {timer.seconds < 10
-                                    ? `0${timer.seconds}`
-                                    : timer.seconds}
-                            </p>
-                            <button onClick={handleClick}>
-                                {timeLeft === 0
-                                    ? "Reset"
-                                    : isRunning
-                                    ? "Pause"
-                                    : "Resume"}
-                            </button>
-                            {isStarted && timeLeft > 0 ? (
-                                <button onClick={handleCancelClick}>
-                                    Cancel
+                        <div className="countdown-wrapper window-body">
+                            <div className="countdown-display">
+                                <p>
+                                    {timer.hours < 10
+                                        ? `0${timer.hours}`
+                                        : timer.hours}
+                                    :
+                                    {timer.minutes < 10
+                                        ? `0${timer.minutes}`
+                                        : timer.minutes}
+                                    :
+                                    {timer.seconds < 10
+                                        ? `0${timer.seconds}`
+                                        : timer.seconds}
+                                </p>
+                            </div>
+                            <div className="window-button-wrapper">
+                                <button onClick={handleClick}>
+                                    {timeLeft === 0
+                                        ? "Reset"
+                                        : isRunning
+                                        ? "Pause"
+                                        : "Resume"}
                                 </button>
-                            ) : null}
+                                {isStarted && timeLeft > 0 ? (
+                                    <button
+                                        onClick={handleCancelClick}
+                                    >
+                                        Cancel
+                                    </button>
+                                ) : null}
+                            </div>
                         </div>
                     )}
                 </div>

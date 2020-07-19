@@ -4,6 +4,8 @@ import moment from "moment";
 import { Howl } from "howler";
 import "98.css";
 
+import upButton from "./assets/images/button-up.svg";
+import downButton from "./assets/images/button-down.svg";
 import chiptune from "./assets/sounds/chiptune-loop.wav";
 import "./App.scss";
 
@@ -90,21 +92,51 @@ const Timer = () => {
                             <p>Please enter a time.</p>
                             <form onSubmit={handleSubmit(onSubmit)}>
                                 <div className="field-row">
-                                    <input
-                                        name="hours"
-                                        defaultValue="00"
-                                        ref={register}
-                                    />
-                                    <input
-                                        name="minutes"
-                                        defaultValue="00"
-                                        ref={register}
-                                    />
-                                    <input
-                                        name="seconds"
-                                        defaultValue="00"
-                                        ref={register}
-                                    />
+                                    <div className="hours time-input ">
+                                        <input
+                                            name="hours"
+                                            defaultValue="00"
+                                            ref={register}
+                                        />
+                                        <img
+                                            src={upButton}
+                                            alt="up arrow"
+                                        />
+                                        <img
+                                            src={downButton}
+                                            alt="down arrow"
+                                        />
+                                    </div>
+                                    <div className="minutes time-input">
+                                        <input
+                                            name="minutes"
+                                            defaultValue="00"
+                                            ref={register}
+                                        />
+                                        <img
+                                            src={upButton}
+                                            alt="up arrow"
+                                        />
+                                        <img
+                                            src={downButton}
+                                            alt="down arrow"
+                                        />
+                                    </div>
+                                    <div className="seconds time-input">
+                                        <input
+                                            name="seconds"
+                                            defaultValue="00"
+                                            ref={register}
+                                        />
+                                        <img
+                                            src={upButton}
+                                            alt="up arrow"
+                                        />
+                                        <img
+                                            src={downButton}
+                                            alt="down arrow"
+                                        />
+                                    </div>
                                 </div>
                                 <div className="field-row window-button-wrapper">
                                     <button

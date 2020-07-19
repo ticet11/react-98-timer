@@ -9,6 +9,10 @@
 
         .window-body {
             padding-top: 5px;
+
+            .time-input {
+                display: flex;
+            }
         }
 
         .window-button-wrapper {

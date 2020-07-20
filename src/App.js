@@ -103,7 +103,7 @@ const Timer = () => {
                             Very Cool Timer
                         </div>
                         <div className="title-bar-controls">
-                            <button aria-label="Help" />
+                            <button aria-label="Help" onClick={() => alert("It's just a timer!\nInput a time using your keyboard or the arrow buttons.\nHit the start button.\nWhen time is up, you will hear an alarm.")}/>
                             <button aria-label="Close" />
                         </div>
                     </div>

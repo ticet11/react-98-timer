@@ -104,7 +104,7 @@ const Timer = () => {
                         </div>
                         <div className="title-bar-controls">
                             <button aria-label="Help" onClick={() => alert("It's just a timer!\nInput a time using your keyboard or the arrow buttons.\nHit the start button.\nWhen time is up, you will hear an alarm.")}/>
-                            <button aria-label="Close" />
+                            <button aria-label="Close" onClick={() => alert("If you close this timer, you'll have nothing left to look at.\nI can't let you do that.")} />
                         </div>
                     </div>
                     {!isStarted ? (

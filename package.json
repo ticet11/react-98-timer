@@ -1,7 +1,7 @@
 {
   "name": "timer",
   "homepage": "https://wiltingdaisy.com/projects/react98timer/",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "98.css": "^0.1.16",

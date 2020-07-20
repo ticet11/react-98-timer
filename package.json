@@ -1,5 +1,6 @@
 {
   "name": "timer",
+  "homepage": "https://wiltingdaisy.com/projects/react98timer/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

@@ -7,7 +7,9 @@ import "98.css";
 import upButton from "./assets/images/button-up.svg";
 import downButton from "./assets/images/button-down.svg";
 import chiptune from "./assets/sounds/chiptune-loop.wav";
+
 import "./App.scss";
+
 
 const Timer = () => {
     const alarm = new Howl({
@@ -72,6 +74,7 @@ const Timer = () => {
         }
     };
 
+
     const incrementField = (type) => {
         if (type === "hours") {
             setHours(parseInt(hours) + 1);
@@ -92,6 +95,7 @@ const Timer = () => {
         }
     };
 
+
     const timer = moment.duration(timeLeft, "seconds")._data;
 
     return (
@@ -99,6 +103,7 @@ const Timer = () => {
             <div className="timer-wrapper">
                 <div className="window">
                     <div className="title-bar">
+
                         <div className="title-bar-text">
                             Very Cool Timer
                         </div>
@@ -106,6 +111,7 @@ const Timer = () => {
                             <button aria-label="Help" onClick={() => alert("It's just a timer!\nInput a time using your keyboard or the arrow buttons.\nHit the start button.\nWhen time is up, you will hear an alarm.")}/>
                             <button aria-label="Close" onClick={() => alert("If you close this timer, you'll have nothing left to look at.\nI can't let you do that.")} />
                         </div>
+
                     </div>
                     {!isStarted ? (
                         <div className="form-wrapper window-body">
@@ -114,6 +120,7 @@ const Timer = () => {
                                 <div className="field-row">
                                     <div className="hours time-input ">
                                         <input
+
                                             name="hours"
                                             value={hours}
                                             ref={register}

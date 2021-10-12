@@ -76,28 +76,28 @@ const Timer = () => {
 		}
 	};
 
-	const incrementField = (type) => {
-		if (type === "hours") {
-			const newHours = parseInt(hours) + 1;
-			setHours(newHours);
-		} else if (type === "minutes") {
-			const newMinutes = parseInt(minutes) + 1;
-			setMinutes(newMinutes);
-		} else if (type === "seconds") {
-			const newSeconds = parseInt(seconds) + 1;
-			setSeconds(newSeconds);
-		}
-	};
+	// const incrementField = (type) => {
+	// 	if (type === "hours") {
+	// 		const newHours = parseInt(hours) + 1;
+	// 		setHours(newHours);
+	// 	} else if (type === "minutes") {
+	// 		const newMinutes = parseInt(minutes) + 1;
+	// 		setMinutes(newMinutes);
+	// 	} else if (type === "seconds") {
+	// 		const newSeconds = parseInt(seconds) + 1;
+	// 		setSeconds(newSeconds);
+	// 	}
+	// };
 
-	const decrementField = (type) => {
-		if (type === "hours" && hours > 0) {
-			setHours(parseInt(hours) - 1);
-		} else if (type === "minutes" && minutes > 0) {
-			setMinutes(parseInt(minutes) - 1);
-		} else if (type === "seconds" && seconds > 0) {
-			setSeconds(parseInt(seconds) - 1);
-		}
-	};
+	// const decrementField = (type) => {
+	// 	if (type === "hours" && hours > 0) {
+	// 		setHours(parseInt(hours) - 1);
+	// 	} else if (type === "minutes" && minutes > 0) {
+	// 		setMinutes(parseInt(minutes) - 1);
+	// 	} else if (type === "seconds" && seconds > 0) {
+	// 		setSeconds(parseInt(seconds) - 1);
+	// 	}
+	// };
 
 	const timer = moment.duration(timeLeft, "seconds")._data;
 

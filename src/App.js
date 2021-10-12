@@ -5,8 +5,8 @@ import { Howl } from "howler";
 
 import "98.css";
 import "./App.scss";
-import upButton from "./assets/images/button-up.svg";
-import downButton from "./assets/images/button-down.svg";
+// import upButton from "./assets/images/button-up.svg";
+// import downButton from "./assets/images/button-down.svg";
 
 import chiptune from "./assets/sounds/chiptune-loop.wav";
 import beep from "./assets/sounds/beep.wav";

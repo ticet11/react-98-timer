@@ -1,6 +1,6 @@
 # Timer App
 
-View it in action [here](https://wiltingdaisy.com/projects/98timer).
+View it in action [here](http://projects.wiltingdaisy.com/98timer).
 
 This timer was build in React and styled using the 98.css package. I
 built this tool for the Code Experiment meetup
@@ -17,9 +17,9 @@ an alarm.
 I plan to add a drop-down box to the timer input, so the user can
 choose the alarm sound they'd like.
 
-### Alarm Sound Source
+## Alarm Sound Source
 
-chiptune - https://freesound.org/people/kasa90/sounds/167419/
+chiptune - <https://freesound.org/people/kasa90/sounds/167419/>
 
 This project was bootstrapped with
 [Create React App](https://github.com/facebook/create-react-app).
@@ -89,29 +89,29 @@ To learn React, check out the
 ### Code Splitting
 
 This section has moved here:
-https://facebook.github.io/create-react-app/docs/code-splitting
+<https://facebook.github.io/create-react-app/docs/code-splitting>
 
 ### Analyzing the Bundle Size
 
 This section has moved here:
-https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+<https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size>
 
 ### Making a Progressive Web App
 
 This section has moved here:
-https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+<https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app>
 
 ### Advanced Configuration
 
 This section has moved here:
-https://facebook.github.io/create-react-app/docs/advanced-configuration
+<https://facebook.github.io/create-react-app/docs/advanced-configuration>
 
 ### Deployment
 
 This section has moved here:
-https://facebook.github.io/create-react-app/docs/deployment
+<https://facebook.github.io/create-react-app/docs/deployment>
 
 ### `npm run build` fails to minify
 
 This section has moved here:
-https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+<https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify>

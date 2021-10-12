@@ -145,12 +145,16 @@ const Timer = () => {
 											onChange={(event) => setHours(event.target.value)}
 											type="number"
 										/>
-										<img src={upButton} alt="up arrow" onClick={hours} />
+										{/* <img
+											src={upButton}
+											alt="up arrow"
+											onClick={() => incrementField("hours")}
+										/>
 										<img
 											src={downButton}
 											alt="down arrow"
 											onClick={() => decrementField("hours")}
-										/>
+										/> */}
 									</div>
 									<div className="minutes time-input">
 										<input
@@ -159,7 +163,7 @@ const Timer = () => {
 											onChange={(event) => setMinutes(event.target.value)}
 											type="number"
 										/>
-										<img
+										{/* <img
 											src={upButton}
 											alt="up arrow"
 											onClick={() => incrementField("minutes")}
@@ -168,7 +172,7 @@ const Timer = () => {
 											src={downButton}
 											alt="down arrow"
 											onClick={() => decrementField("minutes")}
-										/>
+										/> */}
 									</div>
 									<div className="seconds time-input">
 										<input
@@ -177,7 +181,7 @@ const Timer = () => {
 											onChange={(event) => setSeconds(event.target.value)}
 											type="number"
 										/>
-										<img
+										{/* <img
 											src={upButton}
 											alt="up arrow"
 											onClick={() => incrementField("seconds")}
@@ -186,7 +190,7 @@ const Timer = () => {
 											src={downButton}
 											alt="down arrow"
 											onClick={() => decrementField("seconds")}
-										/>
+										/> */}
 									</div>
 								</div>
 								<div className="field-row window-button-wrapper">
